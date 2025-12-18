@@ -1,0 +1,22 @@
+lockfileVersion: '9.0'
+
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
+importers:
+
+  .:
+    dependencies:
+      '@escook/request-miniprogram':
+        specifier: ^0.2.1
+        version: 0.2.1
+
+packages:
+
+  '@escook/request-miniprogram@0.2.1':
+    resolution: {integrity: sha512-ueWV5YsaEm/ycQZuEjMiA88GFMhfBQSjy9GrP9omy4xAQajkGTbYIlnhzsDfWzRPmRC1fKmAiKMrCVcgS+SHcQ==}
+
+snapshots:
+
+  '@escook/request-miniprogram@0.2.1': {}

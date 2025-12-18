@@ -1,60 +1,73 @@
 {
-	"pages": [
-  {
-    "path": "pages/cate/cate",
-    "style": {
-      "navigationBarTitleText": "1"
+  "pages": [{
+      "path": "pages/home/home",
+      "style": {
+        "navigationBarTitleText": "1"
+      }
+    },
+    {
+      "path": "pages/cate/cate",
+      "style": {
+        "navigationBarTitleText": "2"
+      }
+    },
+    {
+      "path": "pages/cart/cart",
+      "style": {
+        "navigationBarTitleText": "3"
+      }
+    },
+    {
+      "path": "pages/my/my",
+      "style": {
+        "navigationBarTitleText": "4"
+      }
     }
+  ],
+  
+  "subPackages": [
+      {
+        "root": "subpkg",
+        "pages": [
+          {
+            "path": "goods_detail/goods_detail",
+            "style": {
+              "navigationBarTitleText": ""
+            }
+          }
+        ]
+      }
+    ],
+  
+  "globalStyle": {
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "优购",
+    "navigationBarBackgroundColor": "#C00000",
+    "backgroundColor": "#FFFFFF"
   },
-  {
-    "path": "pages/home/home",
-    "style": {
-      "navigationBarTitleText": "2"
-    }
-  },
-  {
-    "path": "pages/cart/cart",
-    "style": {
-      "navigationBarTitleText": "3"
-    }
-  },
-  {
-    "path": "pages/my/my",
-    "style": {
-      "navigationBarTitleText": "4"
-    }
-  }
-],
-	"globalStyle": {
-		"navigationBarTextStyle": "white",
-		"navigationBarTitleText": "优购",
-		"navigationBarBackgroundColor": "#C00000",
-		"backgroundColor": "#FFFFFF"
-	},
   "tabBar": {
     "selectedColor": "#C00000",
-    "list":[
-      {
+    "list": [{
         "pagePath": "pages/home/home",
-        "text":"首页",
+        "text": "首页",
         "iconPath": "/static/home.png",
         "selectedIconPath": "/static/home-o.png"
       },
       {
         "pagePath": "pages/cate/cate",
-        "text":"分类",
+        "text": "分类",
         "iconPath": "/static/category.png",
         "selectedIconPath": "/static/category-o.png"
       },
       {
         "pagePath": "pages/cart/cart",
-        "text":"购物车",
+        "text": "购物车",
         "iconPath": "/static/cart.png",
         "selectedIconPath": "/static/cart-o.png"
       },
       {
         "pagePath": "pages/my/my",
-        "text":"我的",
+        "text": "我的",
         "iconPath": "/static/my.png",
         "selectedIconPath": "/static/my-o.png"
       }
