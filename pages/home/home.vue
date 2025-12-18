@@ -19,6 +19,11 @@
 
   const getFloorList = async () => {
     const res = await uni.$http.get('/api/public/v1/home/floordata')
+    res.data.message.forEach(floor => {
+    floor.product_list.forEach(prod => {
+      prod.url = '/subpkg/goods_list/goods_list?' + prod.navigator_url.split('?')[1]
+    })
+  })
     floorList.value = res.data.message
   }
 
