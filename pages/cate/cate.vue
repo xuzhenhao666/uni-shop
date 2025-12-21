@@ -1,5 +1,9 @@
 <template>
   <view>
+    <view class="search-box">
+      <my-search></my-search>
+    </view>
+
     <view class="scroll-view-container">
       <!-- 左侧的滚动视图区域 -->
       <scroll-view class="left-scroll-view" scroll-y :style="{height: windowHeight + 'px'}">
@@ -9,13 +13,14 @@
       <!-- 右侧的滚动视图区域 -->
       <scroll-view class="right-scroll-view" scroll-y :style="{height: windowHeight + 'px'}" :scroll-top="scrollTop">
         <view class="cate-lv2" v-for="item2 in cateLevel2" :key="item2.cat_id">
-            <view class="cate-lv2-title">/ {{item2.cat_name}} /</view>
-            <view class="cate-lv3-list">
-              <navigator :url="`/subpkg/goods_list/goods_list?cid=${item3.cat_id}`" class="cate-lv3-item" v-for="item3 in item2.children" :key="item3.cat_id">
-                <img :src="item3.cat_icon" alt="" />
-                <text>{{item3.cat_name}}</text>
-              </navigator>
-            </view>
+          <view class="cate-lv2-title">/ {{item2.cat_name}} /</view>
+          <view class="cate-lv3-list">
+            <navigator :url="`/subpkg/goods_list/goods_list?cid=${item3.cat_id}`" class="cate-lv3-item"
+              v-for="item3 in item2.children" :key="item3.cat_id">
+              <img :src="item3.cat_icon" alt="" />
+              <text>{{item3.cat_name}}</text>
+            </navigator>
+          </view>
         </view>
       </scroll-view>
     </view>
@@ -47,7 +52,7 @@
   const activeChange = (id) => {
     active.value = id
     cateLevel2.value = cateList.value[id].children
-    scrollTop.value = scrollTop?0:1
+    scrollTop.value = scrollTop ? 0 : 1
   }
 
   // onMounted(async () => {
@@ -119,13 +124,13 @@
         text-align: center;
         padding: 15px 0;
       }
-      
+
       .cate-lv3-list {
         display: flex;
         flex-wrap: wrap;
         padding: 10px;
         background-color: #fff;
-        
+
         .cate-lv3-item {
           width: 33.33%;
           padding: 15px 5px;
@@ -135,13 +140,13 @@
           align-items: center;
           justify-content: center;
           transition: all 0.2s;
-          
+
           // 点击反馈
           &:active {
             background-color: #f8f8f8;
             border-radius: 8px;
           }
-          
+
           image {
             width: 70px;
             height: 70px;
@@ -149,13 +154,13 @@
             // 图片显示优化
             object-fit: cover;
             border-radius: 8px;
-            
+
             // 如果图片需要铺满容器
             // width: 80%;
             // height: 0;
             // padding-bottom: 80%; // 保持正方形
           }
-          
+
           text {
             font-size: 12px;
             color: #333;
@@ -171,6 +176,13 @@
       }
     }
   }
-  
 
+  .search-box {
+    // 设置定位效果为“吸顶”
+    position: sticky;
+    // 吸顶的“位置”
+    top: 0;
+    // 提高层级，防止被轮播图覆盖
+    z-index: 999;
+  }
 </style>
