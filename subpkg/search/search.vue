@@ -1,7 +1,7 @@
 <template>
   <view class="search-box">
     <!-- 使用 uni-ui 提供的搜索组件 -->
-    <uni-search-bar @input="input" @clear="handleClear" v-model="keyWords" class="search-box" :radius="100"
+    <uni-search-bar @confirm="handleConfirm" @input="input" @clear="handleClear" v-model="keyWords" class="search-box" :radius="100"
       cancelButton="none" :focus="true"></uni-search-bar>
     <!-- 搜索建议列表 -->
     <view class="sugg-list" v-if="searchResults && searchResults.length!==0">
@@ -94,6 +94,10 @@
     uni.navigateTo({
       url: '/subpkg/goods_list/goods_list?query=' + keyWords_value
     })
+  }
+  
+  const handleConfirm = () => {
+    goToGoodsList(keyWords.value)
   }
 </script>
 
