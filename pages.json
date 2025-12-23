@@ -41,7 +41,7 @@
               "navigationBarTitleText": "",
               "onReachBottomDistance": 150,
               "enablePullDownRefresh": true,
-              "backgroundColor": "#b5b5b5"
+              "backgroundColor": "#F8F8F8"
             }
           },
           {

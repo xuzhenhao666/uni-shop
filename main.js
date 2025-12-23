@@ -16,8 +16,12 @@ app.$mount()
 import { createSSRApp } from 'vue'
 import App from './App.vue'
 import http from '@/utils/http.js'
+import { showMsg } from './utils/showMsg'
+
+
 export function createApp() {
   uni.$http = http
+  uni.$showMsg = showMsg()
   const app = createSSRApp(App)
   return {
     app
